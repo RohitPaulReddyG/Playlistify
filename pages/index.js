@@ -70,6 +70,14 @@ export default function Home() {
     });
   };
 
+  const toggleSelectAll = () => {
+    if (selectedSongs.length === songs.length) {
+      setSelectedSongs([]);
+    } else {
+      setSelectedSongs([...songs]);
+    }
+  };
+
   const createPlaylist = async () => {
     if (selectedSongs.length === 0) {
       setError('Please select at least one song');
@@ -260,8 +268,30 @@ export default function Home() {
                     <h2 className="text-2xl font-bold gradient-text mb-2">{currentPlaylist.title}</h2>
                     <p className="text-gray-300">Select songs to convert to a YouTube playlist</p>
                   </div>
-                  <div className="glass-card px-4 py-2 rounded-full text-indigo-300">
-                    {selectedSongs.length} selected
+                  <div className="flex items-center gap-4">
+                    <button
+                      onClick={toggleSelectAll}
+                      className="text-indigo-400 hover:text-indigo-300 text-sm flex items-center"
+                    >
+                      {selectedSongs.length === songs.length ? (
+                        <>
+                          <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                          </svg>
+                          Deselect All
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1.707-6.293a1 1 0 01-1.414-1.414L8.586 9H5a1 1 0 010-2h3.586L7.293 5.707a1 1 0 011.414-1.414l3 3a1 1 0 010 1.414l-3 3z"/>
+                          </svg>
+                          Select All
+                        </>
+                      )}
+                    </button>
+                    <div className="glass-card px-4 py-2 rounded-full text-indigo-300">
+                      {selectedSongs.length} selected
+                    </div>
                   </div>
                 </div>
                 
@@ -308,9 +338,23 @@ export default function Home() {
                       <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                       </svg>
-                      Step 3: Your YouTube Playlist is Ready!
+                      Your YouTube Playlist is Ready!
                     </h3>
-                    <p className="text-red-100 mt-1">Click on any link below to open the video on YouTube</p>
+                    <div className="flex items-center mt-2">
+                      <a 
+                        href={playlistLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-red-100 text-sm flex items-center group"
+                      >
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M15 2a3 3 0 013 3v10a3 3 0 01-3 3H5a3 3 0 01-3-3V5a3 3 0 013-3h10zm-1 3H6a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1V6a1 1 0 00-1-1zm-2 3a1 1 0 011 1v2a1 1 0 01-1 1H8a1 1 0 01-1-1V9a1 1 0 011-1h4z"/>
+                        </svg>
+                        Open Full Playlist
+                      </a>
+                      <span className="mx-2 text-red-200">•</span>
+                      <span className="text-red-100 text-sm">{playlistLink.length} videos added</span>
+                    </div>
                   </div>
                   <div className="p-6 divide-y divide-gray-800">
                     {playlistLink.map((song, index) => (
