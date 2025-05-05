@@ -3,11 +3,17 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/next",
+      "use": "@vercel/node",
       "config": {
         "installCommand": "npm install",
-        "buildCommand": "npx next build"
+        "buildCommand": "node node_modules/next/dist/bin/next build"
       }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
