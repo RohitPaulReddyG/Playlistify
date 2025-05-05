@@ -82,7 +82,7 @@ export default function Home() {
 
   const createPlaylist = async () => {
     if (selectedSongs.length === 0) {
-      setError('Please select at least one song');
+      setError('Please select at least one playlist');
       return;
     }
     
@@ -105,9 +105,10 @@ export default function Home() {
         if (err.response?.data?.error === 'token_expired') {
           setError('Your Google session has expired. Please sign in again.');
           signIn('google', { callbackUrl: window.location.href });
-        } else {
-          setError('Please sign in with Google to create YouTube playlists.');
+        } else if (err.response?.data?.error === 'google_auth_required') {
           signIn('google', { callbackUrl: window.location.href });
+        } else {
+          setError(err.response?.data?.message || 'Failed to create YouTube playlist. Please try again.');
         }
       } else {
         setError(err.response?.data?.message || 'Failed to create YouTube playlist. Please try again.');
