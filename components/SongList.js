@@ -41,25 +41,18 @@ export default function SongList({ songs, selectedSongs, toggleSongSelection }) 
                 selectedSongs.includes(song) ? 'scale-100' : 'scale-0 group-hover:scale-100'
               }`}>
                 {selectedSongs.includes(song) ? (
-                  <div className="glass-card p-3 rounded-full">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+                  <div className="glass-card px-4 py-2 rounded-full text-white text-sm font-medium">
+                    Selected
                   </div>
                 ) : (
-                  <div className="glass-card p-3 rounded-full">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clipRule="evenodd" />
-                    </svg>
+                  <div className="glass-card px-4 py-2 rounded-full text-white text-sm font-medium">
+                    Select
                   </div>
                 )}
               </div>
             </div>
             <div className="absolute top-2 left-2">
-              <span className="glass-card px-2 py-1 text-xs font-medium text-white rounded-full flex items-center">
-                <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02z"/>
-                </svg>
+              <span className="glass-card px-2 py-1 text-xs font-medium text-white rounded-full">
                 Playlist
               </span>
             </div>
