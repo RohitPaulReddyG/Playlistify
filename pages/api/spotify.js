@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   try {
     const response = await axios.get('https://api.spotify.com/v1/me/top/artists', {
       headers: {
-        Authorization: \`Bearer \${access_token}\`
+        Authorization: `Bearer ${access_token}`
       }
     });
 
