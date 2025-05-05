@@ -89,6 +89,15 @@ export default function Home() {
     setLoading(true);
     setError('');
     try {
+      // Check if we have Google auth before making the request
+      if (!session || session.provider !== 'google') {
+        signIn('google', { 
+          callbackUrl: window.location.href,
+          redirect: true
+        });
+        return;
+      }
+
       const res = await axios.post('/api/youtube', { songs: selectedSongs });
       setPlaylistLink(res.data.playlistUrl);
       setCurrentStep(3);
@@ -102,23 +111,12 @@ export default function Home() {
     } catch (err) {
       console.error(err);
       if (err.response?.status === 401) {
-        if (err.response?.data?.error === 'token_expired') {
-          setLoading(false);
-          signIn('google', { 
-            callbackUrl: window.location.href,
-            redirect: true
-          });
-        } else if (err.response?.data?.error === 'google_auth_required') {
-          setLoading(false);
-          signIn('google', { 
-            callbackUrl: window.location.href,
-            redirect: true
-          });
-        } else if (err.response?.data?.error === 'not_authenticated') {
-          setError('Please sign in to continue');
-        } else {
-          setError(err.response?.data?.message || 'Failed to create YouTube playlist. Please try again.');
-        }
+        setLoading(false);
+        // Direct Google sign-in for any authentication error
+        signIn('google', { 
+          callbackUrl: window.location.href,
+          redirect: true
+        });
       } else {
         setError(err.response?.data?.message || 'Failed to create YouTube playlist. Please try again.');
       }
