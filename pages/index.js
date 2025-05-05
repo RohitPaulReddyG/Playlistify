@@ -432,16 +432,10 @@ export default function Home() {
                 </svg>
                 PlayListify
               </h3>
-              <p className="text-gray-400 text-sm mt-2">Convert your Spotify playlists to YouTube with ease</p>
             </div>
-            <div className="text-center md:text-right">
-              <p className="text-gray-400">© {new Date().getFullYear()} PlayListify. All rights reserved.</p>
-              <p className="text-gray-500 text-sm mt-1">Not affiliated with Spotify or YouTube.</p>
-              <div className="flex items-center justify-center md:justify-end space-x-4 mt-2">
-                <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm">Privacy Policy</a>
-                <span className="text-gray-600">•</span>
-                <a href="/terms-of-service.html" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm">Terms of Service</a>
-              </div>
+            <div className="flex space-x-4">
+              <a href="/privacy-policy.html" className="text-sm text-gray-400 hover:text-gray-200">Privacy Policy</a>
+              <a href="/terms-of-service.html" className="text-sm text-gray-400 hover:text-gray-200">Terms of Service</a>
             </div>
           </div>
         </div>
