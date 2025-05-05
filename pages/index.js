@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSession, signIn } from 'next-auth/react';
+import { useSession, signIn, getProviders } from 'next-auth/react';
 import Header from '../components/Header';
 import SongList from '../components/SongList';
 import ProgressBar from '../components/ProgressBar';
@@ -16,9 +16,14 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [currentStep, setCurrentStep] = useState(1);
+  const [authError, setAuthError] = useState('');
+  const [needsGoogleAuth, setNeedsGoogleAuth] = useState(false);
 
   useEffect(() => {
     if (session) {
+      if (session.provider === 'spotify') {
+        setNeedsGoogleAuth(true);
+      }
       fetchPlaylists();
       setCurrentStep(2);
     } else {
@@ -84,15 +89,37 @@ export default function Home() {
       return;
     }
     
+    if (needsGoogleAuth) {
+      signIn('google');
+      return;
+    }
+
     setLoading(true);
     setError('');
     try {
       const res = await axios.post('/api/youtube', { songs: selectedSongs });
       setPlaylistLink(res.data.playlistUrl);
       setCurrentStep(3);
+      
+      if (res.data.errors) {
+        const errorCount = res.data.errors.length;
+        if (errorCount > 0) {
+          setError(`${errorCount} song${errorCount > 1 ? 's' : ''} could not be added to the playlist. Check the list for details.`);
+        }
+      }
     } catch (err) {
       console.error(err);
-      setError('Failed to create YouTube playlist. Please try again.');
+      if (err.response?.status === 401) {
+        if (err.response?.data?.error === 'token_expired') {
+          setError('Your Google session has expired. Please sign in again.');
+          setNeedsGoogleAuth(true);
+        } else {
+          setError('Please sign in with Google to create YouTube playlists.');
+          setNeedsGoogleAuth(true);
+        }
+      } else {
+        setError(err.response?.data?.message || 'Failed to create YouTube playlist. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
