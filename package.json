@@ -17,8 +17,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "postinstall": "node -e \"try { require('fs').chmodSync('./node_modules/.bin/next', '755') } catch (e) {}\""
+    "build": "node node_modules/next/dist/bin/next build",
+    "start": "next start"
   }
 }
