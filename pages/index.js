@@ -69,52 +69,50 @@ export default function Home() {
 
   const renderStepIndicator = () => {
     return (
-      <div className="max-w-3xl mx-auto mb-10 px-4">
-        <div className="flex items-center justify-between">
-          <div className={`flex flex-col items-center`}>
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+      <div className="max-w-3xl mx-auto mb-12 px-4">
+        <div className="flex items-center justify-between relative">
+          <div className="absolute inset-x-8 h-0.5 bg-gray-800">
+            <div className={`h-full transition-all duration-500 ease-out ${
+              currentStep >= 2 ? 'w-1/2' : 'w-0'
+            } ${currentStep >= 3 ? 'w-full' : ''} bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500`}></div>
+          </div>
+          
+          <div className="flex flex-col items-center z-10">
+            <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
               currentStep >= 1 
-                ? 'glass-card bg-gradient-to-br from-purple-500 to-pink-500 ring-2 ring-purple-400/50' 
-                : 'glass-card opacity-50'
+                ? 'glass-card bg-gradient-to-br from-indigo-500 to-purple-500 ring-2 ring-indigo-400/30 scale-100' 
+                : 'glass-card opacity-50 scale-90'
             }`}>
               <span className="text-lg font-semibold text-white">1</span>
             </div>
-            <span className={`mt-2 text-sm font-medium ${
-              currentStep >= 1 ? 'text-purple-300' : 'text-gray-500'
+            <span className={`mt-3 text-sm font-medium transition-all duration-500 ${
+              currentStep >= 1 ? 'text-indigo-300' : 'text-gray-500'
             }`}>Login</span>
           </div>
-          <div className={`flex-1 h-1 mx-2 rounded ${
-            currentStep >= 2 
-              ? 'bg-gradient-to-r from-purple-500 to-pink-500' 
-              : 'bg-gray-800'
-          }`}></div>
-          <div className={`flex flex-col items-center`}>
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+
+          <div className="flex flex-col items-center z-10">
+            <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
               currentStep >= 2 
-                ? 'glass-card bg-gradient-to-br from-purple-500 to-pink-500 ring-2 ring-purple-400/50' 
-                : 'glass-card opacity-50'
+                ? 'glass-card bg-gradient-to-br from-purple-500 to-pink-500 ring-2 ring-purple-400/30 scale-100' 
+                : 'glass-card opacity-50 scale-90'
             }`}>
               <span className="text-lg font-semibold text-white">2</span>
             </div>
-            <span className={`mt-2 text-sm font-medium ${
+            <span className={`mt-3 text-sm font-medium transition-all duration-500 ${
               currentStep >= 2 ? 'text-purple-300' : 'text-gray-500'
             }`}>Select</span>
           </div>
-          <div className={`flex-1 h-1 mx-2 rounded ${
-            currentStep >= 3 
-              ? 'bg-gradient-to-r from-purple-500 to-pink-500' 
-              : 'bg-gray-800'
-          }`}></div>
-          <div className={`flex flex-col items-center`}>
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+
+          <div className="flex flex-col items-center z-10">
+            <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
               currentStep >= 3 
-                ? 'glass-card bg-gradient-to-br from-purple-500 to-pink-500 ring-2 ring-purple-400/50' 
-                : 'glass-card opacity-50'
+                ? 'glass-card bg-gradient-to-br from-pink-500 to-rose-500 ring-2 ring-pink-400/30 scale-100' 
+                : 'glass-card opacity-50 scale-90'
             }`}>
               <span className="text-lg font-semibold text-white">3</span>
             </div>
-            <span className={`mt-2 text-sm font-medium ${
-              currentStep >= 3 ? 'text-purple-300' : 'text-gray-500'
+            <span className={`mt-3 text-sm font-medium transition-all duration-500 ${
+              currentStep >= 3 ? 'text-pink-300' : 'text-gray-500'
             }`}>Enjoy</span>
           </div>
         </div>
@@ -123,10 +121,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
+    <div className="min-h-screen bg-[#030712] relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5"></div>
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+      
       <Head>
         <title>PlayListify - Convert Spotify to YouTube</title>
-        <meta name="description" content="Convert your Spotify playlists to YouTube playlists" />
+        <meta name="description" content="Convert your Spotify playlists to YouTube playlists effortlessly" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
@@ -135,17 +136,15 @@ export default function Home() {
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-6xl relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-3xl pointer-events-none"></div>
-        
         {renderStepIndicator()}
         
         {!session ? (
           <div className="mt-8">
-            <div className="glass-card overflow-hidden transform transition-all duration-500 hover:scale-[1.02]">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold mb-4 gradient-text">Welcome to PlayListify</h2>
-                <p className="text-gray-300 mb-6">Convert your favorite Spotify playlists to YouTube with just a few clicks.</p>
-                <div className="flex justify-center">
+            <div className="glass-card overflow-hidden transform transition-all duration-500 hover:scale-[1.01] hover:shadow-xl hover:shadow-indigo-500/10">
+              <div className="p-8 md:p-12">
+                <div className="max-w-2xl">
+                  <h2 className="text-3xl font-bold mb-6 gradient-text">Welcome to PlayListify</h2>
+                  <p className="text-gray-300 text-lg mb-8">Transform your Spotify playlists into YouTube playlists with just a few clicks. Connect your accounts and let the magic happen.</p>
                   <button 
                     onClick={() => signIn('spotify')}
                     className="btn-gradient py-3 px-8 rounded-full inline-flex items-center group transition-all duration-300 hover:scale-105"
@@ -177,7 +176,7 @@ export default function Home() {
             </div>
             
             {error && (
-              <div className="glass-card p-4 mb-8 border border-red-500/20 flex items-center text-red-400">
+              <div className="glass-card p-4 mb-8 border border-red-500/20 flex items-center text-red-400 animate-pulse-slow">
                 <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                 </svg>
@@ -265,8 +264,8 @@ export default function Home() {
         )}
       </main>
       
-      <footer className="glass-card m-4 mt-auto">
-        <div className="container mx-auto px-4 max-w-6xl py-6">
+      <footer className="glass-card mx-4 mb-4">
+        <div className="container mx-auto px-6 max-w-6xl py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <h3 className="text-xl font-bold flex items-center gradient-text">
@@ -276,15 +275,11 @@ export default function Home() {
                 </svg>
                 PlayListify
               </h3>
-              <p className="text-gray-400 text-sm mt-2">
-                Convert Spotify playlists to YouTube with ease
-              </p>
+              <p className="text-gray-400 text-sm mt-2">Convert your Spotify playlists to YouTube with ease</p>
             </div>
             <div className="text-center md:text-right">
               <p className="text-gray-400">© {new Date().getFullYear()} PlayListify. All rights reserved.</p>
-              <p className="text-gray-500 text-sm mt-1">
-                Not affiliated with Spotify or YouTube.
-              </p>
+              <p className="text-gray-500 text-sm mt-1">Not affiliated with Spotify or YouTube.</p>
             </div>
           </div>
         </div>
