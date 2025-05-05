@@ -103,10 +103,19 @@ export default function Home() {
       console.error(err);
       if (err.response?.status === 401) {
         if (err.response?.data?.error === 'token_expired') {
-          setError('Your Google session has expired. Please sign in again.');
-          signIn('google', { callbackUrl: window.location.href });
+          setLoading(false);
+          signIn('google', { 
+            callbackUrl: window.location.href,
+            redirect: true
+          });
         } else if (err.response?.data?.error === 'google_auth_required') {
-          signIn('google', { callbackUrl: window.location.href });
+          setLoading(false);
+          signIn('google', { 
+            callbackUrl: window.location.href,
+            redirect: true
+          });
+        } else if (err.response?.data?.error === 'not_authenticated') {
+          setError('Please sign in to continue');
         } else {
           setError(err.response?.data?.message || 'Failed to create YouTube playlist. Please try again.');
         }

@@ -5,10 +5,8 @@ export default async function handler(req, res) {
   const { songs } = req.body;
   
   try {
-    // Get the current session
     const session = await getSession({ req });
     
-    // Check if user is signed in
     if (!session) {
       return res.status(401).json({ 
         message: 'Please sign in to continue',
@@ -16,11 +14,19 @@ export default async function handler(req, res) {
       });
     }
     
-    // Check if we have a Google auth token for YouTube access
-    if (!session.accessToken || session.provider !== 'google') {
+    // Explicitly check for Google authentication
+    if (session.provider !== 'google') {
       return res.status(401).json({ 
         message: 'Please sign in with Google to create YouTube playlists',
         error: 'google_auth_required'
+      });
+    }
+
+    // Check for valid Google access token
+    if (!session.accessToken) {
+      return res.status(401).json({ 
+        message: 'Your Google session has expired. Please sign in again.',
+        error: 'token_expired'
       });
     }
 
@@ -44,14 +50,14 @@ export default async function handler(req, res) {
           part: 'snippet,status'
         }
       });
-    } catch (playlistError) {
-      if (playlistError.response?.status === 401) {
+    } catch (error) {
+      if (error.response?.status === 401) {
         return res.status(401).json({
           message: 'Your Google session has expired. Please sign in again.',
           error: 'token_expired'
         });
       }
-      throw playlistError;
+      throw error;
     }
 
     const playlistId = playlistResponse.data.id;
@@ -61,7 +67,6 @@ export default async function handler(req, res) {
     // Add videos to the playlist
     for (let song of songs) {
       try {
-        // Search for the video
         const search = `${song.title} ${song.artist} official music video`;
         const searchRes = await axios.get('https://www.googleapis.com/youtube/v3/search', {
           params: {
@@ -108,7 +113,6 @@ export default async function handler(req, res) {
       }
     }
 
-    // Return results with any errors and the playlist URL
     res.status(200).json({ 
       playlistUrl: youtubePlaylist,
       playlistLink: `https://www.youtube.com/playlist?list=${playlistId}`,
@@ -116,6 +120,14 @@ export default async function handler(req, res) {
     });
   } catch (error) {
     console.error('YouTube API error:', error.response?.data || error.message);
+    
+    if (error.response?.status === 401) {
+      return res.status(401).json({ 
+        message: 'Authentication error. Please sign in again.',
+        error: error.response?.data?.error || 'token_expired'
+      });
+    }
+    
     res.status(500).json({ 
       message: error.response?.data?.message || 'An unexpected error occurred. Please try again.',
       error: error.response?.data?.error || error.message
