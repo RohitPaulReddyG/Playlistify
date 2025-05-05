@@ -1,4 +1,3 @@
-
 import NextAuth from 'next-auth';
 import SpotifyProvider from 'next-auth/providers/spotify';
 import GoogleProvider from 'next-auth/providers/google';
@@ -8,7 +7,7 @@ export default NextAuth({
     SpotifyProvider({
       clientId: process.env.SPOTIFY_CLIENT_ID,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-      authorization: 'https://accounts.spotify.com/authorize?scope=user-read-private user-read-email playlist-read-private',
+      authorization: 'https://accounts.spotify.com/authorize?scope=user-read-private user-read-email playlist-read-private playlist-read-collaborative',
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -36,4 +35,3 @@ export default NextAuth({
     }
   }
 });
-    

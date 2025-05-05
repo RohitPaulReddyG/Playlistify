@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
+import { useSession, signIn } from 'next-auth/react';
 import Header from '../components/Header';
 import SongList from '../components/SongList';
 import ProgressBar from '../components/ProgressBar';
@@ -8,6 +8,8 @@ import Head from 'next/head';
 
 export default function Home() {
   const { data: session } = useSession();
+  const [playlists, setPlaylists] = useState([]);
+  const [currentPlaylist, setCurrentPlaylist] = useState(null);
   const [songs, setSongs] = useState([]);
   const [selectedSongs, setSelectedSongs] = useState([]);
   const [playlistLink, setPlaylistLink] = useState([]);
@@ -17,22 +19,43 @@ export default function Home() {
 
   useEffect(() => {
     if (session) {
-      fetchSongs();
+      fetchPlaylists();
       setCurrentStep(2);
     } else {
       setCurrentStep(1);
     }
   }, [session]);
 
-  const fetchSongs = async () => {
+  const fetchPlaylists = async () => {
     setLoading(true);
     setError('');
     try {
       const res = await axios.post('/api/spotify', { access_token: session.accessToken });
-      setSongs(res.data);
+      setPlaylists(res.data);
     } catch (err) {
       console.error(err);
       setError('Failed to fetch your Spotify playlists. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchPlaylistSongs = async (playlist) => {
+    setLoading(true);
+    setError('');
+    setCurrentPlaylist(playlist);
+    setSongs([]);
+    setSelectedSongs([]);
+    
+    try {
+      const res = await axios.post('/api/spotify', { 
+        access_token: session.accessToken,
+        playlistId: playlist.id
+      });
+      setSongs(res.data);
+    } catch (err) {
+      console.error(err);
+      setError('Failed to fetch songs from this playlist. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -49,7 +72,7 @@ export default function Home() {
 
   const createPlaylist = async () => {
     if (selectedSongs.length === 0) {
-      setError('Please select at least one playlist');
+      setError('Please select at least one song');
       return;
     }
     
@@ -120,6 +143,12 @@ export default function Home() {
     );
   };
 
+  const goBack = () => {
+    setCurrentPlaylist(null);
+    setSongs([]);
+    setSelectedSongs([]);
+  };
+
   return (
     <div className="min-h-screen bg-[#030712] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5"></div>
@@ -144,12 +173,15 @@ export default function Home() {
               <div className="p-8 md:p-12">
                 <div className="max-w-2xl">
                   <h2 className="text-3xl font-bold mb-6 gradient-text">Welcome to PlayListify</h2>
-                  <p className="text-gray-300 text-lg mb-8">Transform your Spotify playlists into YouTube playlists with just a few clicks. Connect your accounts and let the magic happen.</p>
+                  <p className="text-gray-300 text-lg mb-8">Transform your Spotify playlists into YouTube playlists with just a few clicks. Connect your account to get started.</p>
                   <button 
                     onClick={() => signIn('spotify')}
                     className="btn-gradient py-3 px-8 rounded-full inline-flex items-center group transition-all duration-300 hover:scale-105"
                   >
-                    Get Started
+                    <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                    </svg>
+                    Connect with Spotify
                   </button>
                 </div>
               </div>
@@ -157,24 +189,6 @@ export default function Home() {
           </div>
         ) : (
           <>
-            <div className="glass-card p-6 mb-8">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h2 className="text-2xl font-bold gradient-text mb-2">Step 2: Select Your Playlists</h2>
-                  <p className="text-gray-300">Choose the playlists you want to convert to YouTube</p>
-                </div>
-                <div className="glass-card px-4 py-2 rounded-full text-purple-300">
-                  {selectedSongs.length} selected
-                </div>
-              </div>
-              
-              <SongList 
-                songs={songs} 
-                selectedSongs={selectedSongs} 
-                toggleSongSelection={toggleSongSelection} 
-              />
-            </div>
-            
             {error && (
               <div className="glass-card p-4 mb-8 border border-red-500/20 flex items-center text-red-400 animate-pulse-slow">
                 <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -184,33 +198,108 @@ export default function Home() {
               </div>
             )}
             
-            <div className="flex justify-center">
-              <button 
-                onClick={createPlaylist}
-                disabled={selectedSongs.length === 0 || loading}
-                className={`btn-gradient py-3 px-8 rounded-full inline-flex items-center group transition-all duration-300 ${
-                  (selectedSongs.length === 0 || loading) ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'
-                }`}
-              >
-                {loading ? (
-                  <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Processing...
-                  </>
-                ) : (
-                  <>
-                    <svg className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                    </svg>
-                    Create YouTube Playlist
-                  </>
+            {!currentPlaylist ? (
+              <div className="glass-card p-6 mb-8">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold gradient-text mb-2">Your Spotify Playlists</h2>
+                    <p className="text-gray-300">Select a playlist to choose songs for conversion</p>
+                  </div>
+                  <div className="glass-card px-4 py-2 rounded-full text-indigo-300">
+                    {playlists.length} playlists
+                  </div>
+                </div>
+                
+                <div className="playlist-grid">
+                  {playlists.map((playlist, index) => (
+                    <div
+                      key={index}
+                      onClick={() => fetchPlaylistSongs(playlist)}
+                      className="glass-card overflow-hidden cursor-pointer group transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-indigo-500/10"
+                    >
+                      <div className="relative aspect-square">
+                        <img
+                          src={playlist.thumbnail || 'https://via.placeholder.com/300?text=No+Image'}
+                          alt={playlist.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 flex items-center justify-center transition-all duration-300">
+                          <div className="transform scale-0 group-hover:scale-100 transition-all duration-300">
+                            <div className="glass-card px-4 py-2 rounded-full text-white text-sm font-medium">
+                              View Songs
+                            </div>
+                          </div>
+                        </div>
+                        <div className="absolute top-2 right-2">
+                          <span className="glass-card px-2 py-1 text-xs font-medium text-white/80 rounded-full">
+                            {playlist.tracks} songs
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-medium text-sm text-white truncate">{playlist.title}</h3>
+                        <p className="text-xs text-indigo-300 truncate mt-1">By {playlist.artist}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="glass-card p-6 mb-8">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <button 
+                      onClick={goBack}
+                      className="text-indigo-400 hover:text-indigo-300 mb-4 flex items-center"
+                    >
+                      <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                      </svg>
+                      Back to Playlists
+                    </button>
+                    <h2 className="text-2xl font-bold gradient-text mb-2">{currentPlaylist.title}</h2>
+                    <p className="text-gray-300">Select songs to convert to a YouTube playlist</p>
+                  </div>
+                  <div className="glass-card px-4 py-2 rounded-full text-indigo-300">
+                    {selectedSongs.length} selected
+                  </div>
+                </div>
+                
+                <SongList 
+                  songs={songs} 
+                  selectedSongs={selectedSongs} 
+                  toggleSongSelection={toggleSongSelection} 
+                />
+
+                {selectedSongs.length > 0 && (
+                  <div className="flex justify-center mt-8">
+                    <button 
+                      onClick={createPlaylist}
+                      disabled={loading}
+                      className="btn-gradient py-3 px-8 rounded-full inline-flex items-center group transition-all duration-300 hover:scale-105"
+                    >
+                      {loading ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                          </svg>
+                          Create YouTube Playlist
+                        </>
+                      )}
+                    </button>
+                  </div>
                 )}
-              </button>
-            </div>
-            
+              </div>
+            )}
+
             {playlistLink && playlistLink.length > 0 && (
               <div className="mt-8">
                 <div className="glass-card overflow-hidden">
