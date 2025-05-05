@@ -3,10 +3,84 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Update body styles */
 body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #f9fafb;
+  background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
   color: #333;
+  min-height: 100vh;
+}
+
+/* Enhanced glass effect */
+.glass-effect {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+/* Modern gradient backgrounds */
+.bg-spotify-gradient {
+  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+}
+
+.bg-youtube-gradient {
+  background: linear-gradient(135deg, #FF0000 0%, #ff4e4e 100%);
+}
+
+/* Enhanced button styles */
+.btn {
+  @apply px-5 py-2.5 rounded-full font-medium transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:from-pink-600 hover:to-rose-600;
+}
+
+/* Modern card styles */
+.card {
+  @apply bg-white/80 backdrop-blur-lg rounded-xl shadow-xl p-6 
+         transition-all duration-300 hover:shadow-2xl 
+         border border-white/20;
+}
+
+/* Animated hover effects */
+.hover-lift {
+  @apply transition-all duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  @apply transform -translate-y-2 shadow-xl;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-500/50 rounded-full hover:bg-purple-600/50;
+}
+
+/* Progress bar animation */
+@keyframes progress-pulse {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.98); }
+}
+
+.progress-bar {
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+  animation: progress-pulse 2s ease-in-out infinite;
+}
+
+/* Container styles */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 /* Custom animation for the checkmark */
@@ -125,12 +199,60 @@ body {
   flex items-center justify-center;
 }
 
-/* Enhanced hover effects */
-.hover-lift {
-  @apply transition-all duration-300 ease-out;
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
-.hover-lift:hover {
-  @apply transform -translate-y-1 shadow-lg;
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  @apply transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Custom gradients */
+.bg-spotify-brand {
+  @apply bg-gradient-to-r from-green-500 to-green-400;
+}
+
+.bg-youtube-brand {
+  @apply bg-gradient-to-r from-red-600 to-red-500;
+}
+
+.bg-card-gradient {
+  @apply bg-gradient-to-br from-purple-50 via-white to-blue-50;
+}
+
+/* Glass effect */
+.glass-effect {
+  @apply backdrop-blur-sm bg-white/30 border border-white/50;
+}
+
+/* Interactive elements */
+.interactive-hover {
+  @apply transform transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+/* Custom button styles */
+.btn-gradient {
+  @apply bg-gradient-to-r from-purple-600 to-blue-500 text-white 
+         hover:from-purple-700 hover:to-blue-600
+         transform hover:scale-105 transition-all duration-200
+         focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50;
+}
+
+/* Card styles */
+.playlist-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden
+         transform transition-all duration-300
+         hover:-translate-y-1 hover:shadow-xl;
+}
+
+.playlist-card-selected {
+  @apply ring-2 ring-purple-500 shadow-purple-100;
 }
     
