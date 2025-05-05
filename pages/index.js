@@ -91,9 +91,8 @@ export default function Home() {
     try {
       // Check if we have Google auth before making the request
       if (!session || session.provider !== 'google') {
-        signIn('google', { 
+        await signIn('google', {
           callbackUrl: window.location.href,
-          redirect: true
         });
         return;
       }
@@ -112,10 +111,8 @@ export default function Home() {
       console.error(err);
       if (err.response?.status === 401) {
         setLoading(false);
-        // Direct Google sign-in for any authentication error
-        signIn('google', { 
-          callbackUrl: window.location.href,
-          redirect: true
+        await signIn('google', {
+          callbackUrl: window.location.href
         });
       } else {
         setError(err.response?.data?.message || 'Failed to create YouTube playlist. Please try again.');
