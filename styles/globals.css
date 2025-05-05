@@ -85,35 +85,44 @@ body {
 }
 
 
-/* Add these new styles after your existing styles */
+/* Update these styles at the end of your file */
 
 /* Playlist card hover effects */
 .playlist-card {
-  @apply relative overflow-hidden rounded-lg transition-transform duration-300;
+  @apply relative overflow-hidden rounded-md transition-transform duration-200;
 }
 
-.playlist-card:hover .playlist-overlay {
-  @apply opacity-100;
-}
-
-.playlist-overlay {
-  @apply absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-300
-  flex items-center justify-center;
+.playlist-card:hover {
+  @apply transform scale-[1.02];
 }
 
 /* Smooth image loading */
 .image-fade-in {
-  @apply opacity-0 transition-opacity duration-500;
+  @apply opacity-0 transition-opacity duration-300;
 }
 
 .image-fade-in.loaded {
   @apply opacity-100;
 }
 
-/* Custom grid layout for better responsiveness */
+/* Custom grid layout */
 .playlist-grid {
-  @apply grid gap-4;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  @apply grid gap-3;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+/* Subtle hover effects */
+.hover-lift {
+  @apply transition-all duration-200 ease-out;
+}
+
+.hover-lift:hover {
+  @apply transform scale-[1.02] shadow-sm;
+}
+
+.playlist-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-300
+  flex items-center justify-center;
 }
 
 /* Enhanced hover effects */
