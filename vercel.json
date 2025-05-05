@@ -1,5 +1,0 @@
-{
-  "version": 2,
-  "framework": "nextjs",
-  "buildCommand": "chmod +x ./node_modules/.bin/next && npm run build"
-}
