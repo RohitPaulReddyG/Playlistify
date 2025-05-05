@@ -1,12 +1,15 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --gradient-primary: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #121212;
-  color: #ffffff;
+  background: #0f172a;
+  color: #f8fafc;
 }
 
 .container {
@@ -41,6 +44,16 @@ body {
   background-color: #333333;
 }
 
+.btn-gradient {
+  background: var(--gradient-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
 .card {
   background-color: #282828;
   border-radius: 0.5rem;
@@ -53,21 +66,44 @@ body {
   transform: translateY(-2px);
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #282828;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .playlist-grid {
@@ -90,4 +126,3 @@ body {
 .bg-spotify {
   background-color: #1DB954;
 }
-    
