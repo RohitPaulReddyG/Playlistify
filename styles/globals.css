@@ -83,4 +83,45 @@ body {
 .card {
   @apply bg-white rounded-lg shadow-md p-4 transition-all duration-200 hover:shadow-lg;
 }
+
+
+/* Add these new styles after your existing styles */
+
+/* Playlist card hover effects */
+.playlist-card {
+  @apply relative overflow-hidden rounded-lg transition-transform duration-300;
+}
+
+.playlist-card:hover .playlist-overlay {
+  @apply opacity-100;
+}
+
+.playlist-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-300
+  flex items-center justify-center;
+}
+
+/* Smooth image loading */
+.image-fade-in {
+  @apply opacity-0 transition-opacity duration-500;
+}
+
+.image-fade-in.loaded {
+  @apply opacity-100;
+}
+
+/* Custom grid layout for better responsiveness */
+.playlist-grid {
+  @apply grid gap-4;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  @apply transition-all duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  @apply transform -translate-y-1 shadow-lg;
+}
     
