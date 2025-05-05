@@ -437,6 +437,11 @@ export default function Home() {
             <div className="text-center md:text-right">
               <p className="text-gray-400">© {new Date().getFullYear()} PlayListify. All rights reserved.</p>
               <p className="text-gray-500 text-sm mt-1">Not affiliated with Spotify or YouTube.</p>
+              <div className="flex items-center justify-center md:justify-end space-x-4 mt-2">
+                <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm">Privacy Policy</a>
+                <span className="text-gray-600">•</span>
+                <a href="/terms-of-service.html" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm">Terms of Service</a>
+              </div>
             </div>
           </div>
         </div>
