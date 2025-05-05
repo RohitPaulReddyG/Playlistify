@@ -5,20 +5,20 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fafafa;
-  color: #333;
+  background-color: #121212;
+  color: #ffffff;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .btn {
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
   transition: all 0.2s;
 }
 
@@ -28,43 +28,66 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #1aa34a;
+  background-color: #1ed760;
+  transform: scale(1.02);
 }
 
 .btn-secondary {
-  background-color: #ef4444;
+  background-color: #282828;
   color: white;
 }
 
 .btn-secondary:hover {
-  background-color: #dc2626;
+  background-color: #333333;
 }
 
 .card {
-  background-color: white;
+  background-color: #282828;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.2s;
+  padding: 1rem;
+  transition: all 0.2s;
 }
 
 .card:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #333333;
+  transform: translateY(-2px);
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #121212;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
+  background: #282828;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: #333333;
+}
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.header {
+  background-color: #282828;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.text-spotify {
+  color: #1DB954;
+}
+
+.bg-spotify {
+  background-color: #1DB954;
 }
     
