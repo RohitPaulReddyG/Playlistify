@@ -142,42 +142,15 @@ export default function Home() {
         {!session ? (
           <div className="mt-8">
             <div className="glass-card overflow-hidden transform transition-all duration-500 hover:scale-[1.02]">
-              <div className="md:flex items-stretch">
-                <div className="md:w-1/3 bg-gradient-to-br from-purple-500 to-pink-500 p-8 flex items-center justify-center">
-                  <img 
-                    src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" 
-                    alt="Spotify Logo" 
-                    className="h-16 animate-float"
-                  />
-                </div>
-                <div className="p-8 md:w-2/3">
-                  <div className="text-purple-400 font-semibold mb-2">Step 1</div>
-                  <h2 className="text-3xl font-bold mb-4 gradient-text">Welcome to PlayListify</h2>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    Convert your Spotify playlists to YouTube playlists in three simple steps:
-                  </p>
-                  <ol className="space-y-4 text-gray-300 mb-8">
-                    <li className="flex items-center">
-                      <span className="glass-card w-8 h-8 rounded-full flex items-center justify-center mr-3 text-purple-400">1</span>
-                      <span>Connect your Spotify account to access your playlists</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="glass-card w-8 h-8 rounded-full flex items-center justify-center mr-3 text-purple-400">2</span>
-                      <span>Choose which playlists you want to convert</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="glass-card w-8 h-8 rounded-full flex items-center justify-center mr-3 text-purple-400">3</span>
-                      <span>Get your YouTube playlist instantly</span>
-                    </li>
-                  </ol>
+              <div className="p-8">
+                <h2 className="text-2xl font-bold mb-4 gradient-text">Welcome to PlayListify</h2>
+                <p className="text-gray-300 mb-6">Convert your favorite Spotify playlists to YouTube with just a few clicks.</p>
+                <div className="flex justify-center">
                   <button 
-                    onClick={() => document.querySelector('button[data-provider="spotify"]').click()}
-                    className="btn-gradient text-white font-medium py-3 px-8 rounded-full inline-flex items-center group transition-all duration-300 hover:scale-105"
+                    onClick={() => signIn('spotify')}
+                    className="btn-gradient py-3 px-8 rounded-full inline-flex items-center group transition-all duration-300 hover:scale-105"
                   >
-                    <svg className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02z"/>
-                    </svg>
-                    Get Started with Spotify
+                    Get Started
                   </button>
                 </div>
               </div>
