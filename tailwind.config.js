@@ -1,7 +1,8 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -18,10 +19,6 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' }
         }
-      },
-      backdropFilter: {
-        'none': 'none',
-        'blur': 'blur(8px)',
       }
     },
   },

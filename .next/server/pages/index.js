@@ -1,105 +1,844 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/index";
-exports.ids = ["pages/index"];
+exports.id = 405;
+exports.ids = [405];
 exports.modules = {
 
-/***/ "./components/Header.js":
-/*!******************************!*\
-  !*** ./components/Header.js ***!
-  \******************************/
+/***/ 6624:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Header)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-auth/react */ \"next-auth/react\");\n/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_auth_react__WEBPACK_IMPORTED_MODULE_1__);\n\n\nfunction Header() {\n    const { data: session  } = (0,next_auth_react__WEBPACK_IMPORTED_MODULE_1__.useSession)();\n    const handleSignIn = ()=>{\n        // Use NextAuth's signIn method instead of direct Spotify authorization\n        (0,next_auth_react__WEBPACK_IMPORTED_MODULE_1__.signIn)(\"spotify\");\n    };\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"header\", {\n        className: \"bg-purple-600 text-white p-4 shadow-md\",\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            className: \"container mx-auto flex justify-between items-center\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                    className: \"text-xl font-bold\",\n                    children: \"PlayListify\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\Header.js\",\n                    lineNumber: 15,\n                    columnNumber: 9\n                }, this),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    children: session ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                        onClick: ()=>(0,next_auth_react__WEBPACK_IMPORTED_MODULE_1__.signOut)(),\n                        className: \"bg-red-500 p-2 rounded\",\n                        children: \"Logout\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\Header.js\",\n                        lineNumber: 18,\n                        columnNumber: 13\n                    }, this) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                        onClick: handleSignIn,\n                        className: \"bg-green-500 p-2 rounded\",\n                        children: \"Login with Spotify\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\Header.js\",\n                        lineNumber: 20,\n                        columnNumber: 13\n                    }, this)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\Header.js\",\n                    lineNumber: 16,\n                    columnNumber: 9\n                }, this)\n            ]\n        }, void 0, true, {\n            fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\Header.js\",\n            lineNumber: 14,\n            columnNumber: 7\n        }, this)\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\Header.js\",\n        lineNumber: 13,\n        columnNumber: 5\n    }, this);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL0hlYWRlci5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUNBO0FBQThEO0FBRS9DLFNBQVNHLE1BQU0sR0FBRztJQUMvQixNQUFNLEVBQUVDLElBQUksRUFBRUMsT0FBTyxHQUFFLEdBQUdILDJEQUFVLEVBQUU7SUFFdEMsTUFBTUksWUFBWSxHQUFHLElBQU07UUFDekIsdUVBQXVFO1FBQ3ZFTix1REFBTSxDQUFDLFNBQVMsQ0FBQyxDQUFDO0tBQ25CO0lBRUQscUJBQ0UsOERBQUNPLFFBQU07UUFBQ0MsU0FBUyxFQUFDLHdDQUF3QztrQkFDeEQsNEVBQUNDLEtBQUc7WUFBQ0QsU0FBUyxFQUFDLHFEQUFxRDs7OEJBQ2xFLDhEQUFDRSxJQUFFO29CQUFDRixTQUFTLEVBQUMsbUJBQW1COzhCQUFDLGFBQVc7Ozs7O3dCQUFLOzhCQUNsRCw4REFBQ0MsS0FBRzs4QkFDREosT0FBTyxpQkFDTiw4REFBQ00sUUFBTTt3QkFBQ0MsT0FBTyxFQUFFLElBQU1YLHdEQUFPLEVBQUU7d0JBQUVPLFNBQVMsRUFBQyx3QkFBd0I7a0NBQUMsUUFBTTs7Ozs7NEJBQVMsaUJBRXBGLDhEQUFDRyxRQUFNO3dCQUFDQyxPQUFPLEVBQUVOLFlBQVk7d0JBQUVFLFNBQVMsRUFBQywwQkFBMEI7a0NBQUMsb0JBQWtCOzs7Ozs0QkFBUzs7Ozs7d0JBRTdGOzs7Ozs7Z0JBQ0Y7Ozs7O1lBQ0MsQ0FDVDtDQUNIIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcGxheWxpc3RpZnkvLi9jb21wb25lbnRzL0hlYWRlci5qcz80ZGJiIl0sInNvdXJjZXNDb250ZW50IjpbIlxuaW1wb3J0IHsgc2lnbkluLCBzaWduT3V0LCB1c2VTZXNzaW9uIH0gZnJvbSAnbmV4dC1hdXRoL3JlYWN0JztcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gSGVhZGVyKCkge1xuICBjb25zdCB7IGRhdGE6IHNlc3Npb24gfSA9IHVzZVNlc3Npb24oKTtcblxuICBjb25zdCBoYW5kbGVTaWduSW4gPSAoKSA9PiB7XG4gICAgLy8gVXNlIE5leHRBdXRoJ3Mgc2lnbkluIG1ldGhvZCBpbnN0ZWFkIG9mIGRpcmVjdCBTcG90aWZ5IGF1dGhvcml6YXRpb25cbiAgICBzaWduSW4oJ3Nwb3RpZnknKTtcbiAgfTtcblxuICByZXR1cm4gKFxuICAgIDxoZWFkZXIgY2xhc3NOYW1lPVwiYmctcHVycGxlLTYwMCB0ZXh0LXdoaXRlIHAtNCBzaGFkb3ctbWRcIj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29udGFpbmVyIG14LWF1dG8gZmxleCBqdXN0aWZ5LWJldHdlZW4gaXRlbXMtY2VudGVyXCI+XG4gICAgICAgIDxoMSBjbGFzc05hbWU9XCJ0ZXh0LXhsIGZvbnQtYm9sZFwiPlBsYXlMaXN0aWZ5PC9oMT5cbiAgICAgICAgPGRpdj5cbiAgICAgICAgICB7c2Vzc2lvbiA/IChcbiAgICAgICAgICAgIDxidXR0b24gb25DbGljaz17KCkgPT4gc2lnbk91dCgpfSBjbGFzc05hbWU9XCJiZy1yZWQtNTAwIHAtMiByb3VuZGVkXCI+TG9nb3V0PC9idXR0b24+XG4gICAgICAgICAgKSA6IChcbiAgICAgICAgICAgIDxidXR0b24gb25DbGljaz17aGFuZGxlU2lnbklufSBjbGFzc05hbWU9XCJiZy1ncmVlbi01MDAgcC0yIHJvdW5kZWRcIj5Mb2dpbiB3aXRoIFNwb3RpZnk8L2J1dHRvbj5cbiAgICAgICAgICApfVxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgIDwvaGVhZGVyPlxuICApO1xufVxuICAgICJdLCJuYW1lcyI6WyJzaWduSW4iLCJzaWduT3V0IiwidXNlU2Vzc2lvbiIsIkhlYWRlciIsImRhdGEiLCJzZXNzaW9uIiwiaGFuZGxlU2lnbkluIiwiaGVhZGVyIiwiY2xhc3NOYW1lIiwiZGl2IiwiaDEiLCJidXR0b24iLCJvbkNsaWNrIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./components/Header.js\n");
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ Home)
+});
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(997);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(6689);
+// EXTERNAL MODULE: external "next-auth/react"
+var react_ = __webpack_require__(1649);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1664);
+;// CONCATENATED MODULE: ./components/Header.js
+
+
+
+function Header() {
+    const { data: session  } = (0,react_.useSession)();
+    const handleSignIn = (provider)=>{
+        (0,react_.signIn)(provider);
+    };
+    const handleSignOut = ()=>{
+        (0,react_.signOut)({
+            callbackUrl: "/"
+        });
+    };
+    return /*#__PURE__*/ jsx_runtime_.jsx("header", {
+        className: "glass-card m-4",
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+            className: "container mx-auto px-4 max-w-6xl flex flex-col md:flex-row justify-between items-center py-6",
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                    className: "text-3xl font-bold gradient-text mb-4 md:mb-0",
+                    children: "PlayListify"
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    className: "flex flex-wrap gap-3",
+                    children: !session ? /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                onClick: ()=>handleSignIn("spotify"),
+                                "data-provider": "spotify",
+                                className: "btn-gradient text-white font-medium py-2.5 px-5 rounded-full flex items-center space-x-2 hover:scale-105 transition-all duration-300",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                    children: "Login with Spotify"
+                                })
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                onClick: ()=>handleSignIn("google"),
+                                "data-provider": "google",
+                                className: "glass-card hover:bg-white/20 text-white font-medium py-2.5 px-5 rounded-full flex items-center space-x-2 hover:scale-105 transition-all duration-300",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                    children: "Login with Google"
+                                })
+                            })
+                        ]
+                    }) : /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "flex items-center gap-4",
+                        children: [
+                            session.user?.image && /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "glass-card p-1 rounded-full",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                                    src: session.user.image,
+                                    alt: session.user.name || "User",
+                                    className: "w-8 h-8 rounded-full"
+                                })
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                className: "hidden md:inline-block glass-card px-4 py-1 rounded-full",
+                                children: session.user?.name || "User"
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                onClick: handleSignOut,
+                                className: "glass-card hover:bg-white/20 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 hover:scale-105",
+                                children: "Logout"
+                            })
+                        ]
+                    })
+                })
+            ]
+        })
+    });
+};
+
+;// CONCATENATED MODULE: ./components/SongList.js
+
+function SongList({ songs , selectedSongs , toggleSongSelection  }) {
+    if (!songs || songs.length === 0) {
+        return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+            className: "glass-card p-12 text-center",
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    className: "animate-float glass-card inline-block p-4 rounded-full mb-4",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                        className: "w-8 h-8 text-purple-400",
+                        fill: "none",
+                        stroke: "currentColor",
+                        viewBox: "0 0 24 24",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            strokeWidth: "2",
+                            d: "M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("h3", {
+                    className: "text-xl font-semibold gradient-text mb-4",
+                    children: "No playlists found"
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                    onClick: ()=>window.location.reload(),
+                    className: "btn-gradient px-6 py-2 rounded-full text-white hover:scale-105 transition-all duration-300",
+                    children: "Refresh Playlists"
+                })
+            ]
+        });
+    }
+    return /*#__PURE__*/ jsx_runtime_.jsx("div", {
+        className: "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6",
+        children: songs.map((song, index)=>/*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                onClick: ()=>toggleSongSelection(song),
+                className: `group glass-card overflow-hidden transition-all duration-300 hover:-translate-y-2 cursor-pointer ${selectedSongs.includes(song) ? "ring-2 ring-purple-400" : ""}`,
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "relative aspect-square",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                                src: song.thumbnail || "https://via.placeholder.com/300?text=No+Image",
+                                alt: song.title,
+                                className: "w-full h-full object-cover"
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: `absolute inset-0 flex items-center justify-center transition-all duration-300 ${selectedSongs.includes(song) ? "bg-purple-500/40 backdrop-blur-sm" : "bg-black/0 group-hover:bg-black/30"}`,
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                    className: `transform transition-all duration-300 ${selectedSongs.includes(song) ? "scale-100" : "scale-0 group-hover:scale-100"}`,
+                                    children: selectedSongs.includes(song) ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "glass-card px-4 py-2 rounded-full text-white text-sm font-medium",
+                                        children: "Selected"
+                                    }) : /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "glass-card px-4 py-2 rounded-full text-white text-sm font-medium",
+                                        children: "Select"
+                                    })
+                                })
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "absolute top-2 left-2",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                    className: "glass-card px-2 py-1 text-xs font-medium text-white rounded-full",
+                                    children: "Playlist"
+                                })
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "p-4",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("h3", {
+                                className: "font-medium text-sm text-white truncate",
+                                children: song.title
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                className: "text-xs text-purple-300 truncate mt-1",
+                                children: song.artist
+                            })
+                        ]
+                    })
+                ]
+            }, index))
+    });
+};
+
+;// CONCATENATED MODULE: ./components/ProgressBar.js
+
+function ProgressBar() {
+    return /*#__PURE__*/ jsx_runtime_.jsx("div", {
+        className: "fixed top-0 left-0 right-0 z-50",
+        children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+            className: "h-1 w-full overflow-hidden bg-white/10",
+            children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                className: "animate-progress-indeterminate h-full w-1/3 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500"
+            })
+        })
+    });
+};
+
+;// CONCATENATED MODULE: external "axios"
+const external_axios_namespaceObject = require("axios");
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_namespaceObject);
+;// CONCATENATED MODULE: external "next/head"
+const head_namespaceObject = require("next/head");
+var head_default = /*#__PURE__*/__webpack_require__.n(head_namespaceObject);
+;// CONCATENATED MODULE: ./pages/index.js
+
+
+
+
+
+
+
+
+function Home() {
+    const { data: session  } = (0,react_.useSession)();
+    const { 0: songs , 1: setSongs  } = (0,external_react_.useState)([]);
+    const { 0: selectedSongs , 1: setSelectedSongs  } = (0,external_react_.useState)([]);
+    const { 0: playlistLink , 1: setPlaylistLink  } = (0,external_react_.useState)([]);
+    const { 0: loading , 1: setLoading  } = (0,external_react_.useState)(false);
+    const { 0: error , 1: setError  } = (0,external_react_.useState)("");
+    const { 0: currentStep , 1: setCurrentStep  } = (0,external_react_.useState)(1);
+    (0,external_react_.useEffect)(()=>{
+        if (session) {
+            fetchSongs();
+            setCurrentStep(2);
+        } else {
+            setCurrentStep(1);
+        }
+    }, [
+        session
+    ]);
+    const fetchSongs = async ()=>{
+        setLoading(true);
+        setError("");
+        try {
+            const res = await external_axios_default().post("/api/spotify", {
+                access_token: session.accessToken
+            });
+            setSongs(res.data);
+        } catch (err) {
+            console.error(err);
+            setError("Failed to fetch your Spotify playlists. Please try again.");
+        } finally{
+            setLoading(false);
+        }
+    };
+    const toggleSongSelection = (song)=>{
+        setSelectedSongs((prev)=>{
+            if (prev.includes(song)) {
+                return prev.filter((s)=>s !== song);
+            }
+            return [
+                ...prev,
+                song
+            ];
+        });
+    };
+    const createPlaylist = async ()=>{
+        if (selectedSongs.length === 0) {
+            setError("Please select at least one playlist");
+            return;
+        }
+        setLoading(true);
+        setError("");
+        try {
+            const res = await external_axios_default().post("/api/youtube", {
+                songs: selectedSongs
+            });
+            setPlaylistLink(res.data.playlistUrl);
+            setCurrentStep(3);
+        } catch (err) {
+            console.error(err);
+            setError("Failed to create YouTube playlist. Please try again.");
+        } finally{
+            setLoading(false);
+        }
+    };
+    const renderStepIndicator = ()=>{
+        return /*#__PURE__*/ jsx_runtime_.jsx("div", {
+            className: "max-w-3xl mx-auto mb-10 px-4",
+            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                className: "flex items-center justify-between",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: `flex flex-col items-center`,
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: `w-10 h-10 rounded-full flex items-center justify-center ${currentStep >= 1 ? "glass-card bg-gradient-to-br from-purple-500 to-pink-500 ring-2 ring-purple-400/50" : "glass-card opacity-50"}`,
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                    className: "text-lg font-semibold text-white",
+                                    children: "1"
+                                })
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                className: `mt-2 text-sm font-medium ${currentStep >= 1 ? "text-purple-300" : "text-gray-500"}`,
+                                children: "Login"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: `flex-1 h-1 mx-2 rounded ${currentStep >= 2 ? "bg-gradient-to-r from-purple-500 to-pink-500" : "bg-gray-800"}`
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: `flex flex-col items-center`,
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: `w-10 h-10 rounded-full flex items-center justify-center ${currentStep >= 2 ? "glass-card bg-gradient-to-br from-purple-500 to-pink-500 ring-2 ring-purple-400/50" : "glass-card opacity-50"}`,
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                    className: "text-lg font-semibold text-white",
+                                    children: "2"
+                                })
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                className: `mt-2 text-sm font-medium ${currentStep >= 2 ? "text-purple-300" : "text-gray-500"}`,
+                                children: "Select"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: `flex-1 h-1 mx-2 rounded ${currentStep >= 3 ? "bg-gradient-to-r from-purple-500 to-pink-500" : "bg-gray-800"}`
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: `flex flex-col items-center`,
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: `w-10 h-10 rounded-full flex items-center justify-center ${currentStep >= 3 ? "glass-card bg-gradient-to-br from-purple-500 to-pink-500 ring-2 ring-purple-400/50" : "glass-card opacity-50"}`,
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                    className: "text-lg font-semibold text-white",
+                                    children: "3"
+                                })
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                className: `mt-2 text-sm font-medium ${currentStep >= 3 ? "text-purple-300" : "text-gray-500"}`,
+                                children: "Enjoy"
+                            })
+                        ]
+                    })
+                ]
+            })
+        });
+    };
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: "min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900",
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("title", {
+                        children: "PlayListify - Convert Spotify to YouTube"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                        name: "description",
+                        content: "Convert your Spotify playlists to YouTube playlists"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("link", {
+                        rel: "icon",
+                        href: "/favicon.ico"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("link", {
+                        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
+                        rel: "stylesheet"
+                    })
+                ]
+            }),
+            loading && /*#__PURE__*/ jsx_runtime_.jsx(ProgressBar, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(Header, {}),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("main", {
+                className: "container mx-auto px-4 py-8 max-w-6xl relative",
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: "absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-3xl pointer-events-none"
+                    }),
+                    renderStepIndicator(),
+                    !session ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: "mt-8",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                            className: "glass-card overflow-hidden transform transition-all duration-500 hover:scale-[1.02]",
+                            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "p-8",
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("h2", {
+                                        className: "text-2xl font-bold mb-4 gradient-text",
+                                        children: "Welcome to PlayListify"
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                        className: "text-gray-300 mb-6",
+                                        children: "Convert your favorite Spotify playlists to YouTube with just a few clicks."
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "flex justify-center",
+                                        children: /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                            onClick: ()=>signIn("spotify"),
+                                            className: "btn-gradient py-3 px-8 rounded-full inline-flex items-center group transition-all duration-300 hover:scale-105",
+                                            children: "Get Started"
+                                        })
+                                    })
+                                ]
+                            })
+                        })
+                    }) : /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "glass-card p-6 mb-8",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                        className: "flex items-center justify-between mb-6",
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                children: [
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("h2", {
+                                                        className: "text-2xl font-bold gradient-text mb-2",
+                                                        children: "Step 2: Select Your Playlists"
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                        className: "text-gray-300",
+                                                        children: "Choose the playlists you want to convert to YouTube"
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                className: "glass-card px-4 py-2 rounded-full text-purple-300",
+                                                children: [
+                                                    selectedSongs.length,
+                                                    " selected"
+                                                ]
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx(SongList, {
+                                        songs: songs,
+                                        selectedSongs: selectedSongs,
+                                        toggleSongSelection: toggleSongSelection
+                                    })
+                                ]
+                            }),
+                            error && /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "glass-card p-4 mb-8 border border-red-500/20 flex items-center text-red-400",
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                                        className: "w-5 h-5 mr-2 flex-shrink-0",
+                                        fill: "currentColor",
+                                        viewBox: "0 0 20 20",
+                                        children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                            fillRule: "evenodd",
+                                            d: "M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z",
+                                            clipRule: "evenodd"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                        children: error
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "flex justify-center",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                    onClick: createPlaylist,
+                                    disabled: selectedSongs.length === 0 || loading,
+                                    className: `btn-gradient py-3 px-8 rounded-full inline-flex items-center group transition-all duration-300 ${selectedSongs.length === 0 || loading ? "opacity-50 cursor-not-allowed" : "hover:scale-105"}`,
+                                    children: loading ? /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("svg", {
+                                                className: "animate-spin -ml-1 mr-3 h-5 w-5",
+                                                xmlns: "http://www.w3.org/2000/svg",
+                                                fill: "none",
+                                                viewBox: "0 0 24 24",
+                                                children: [
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("circle", {
+                                                        className: "opacity-25",
+                                                        cx: "12",
+                                                        cy: "12",
+                                                        r: "10",
+                                                        stroke: "currentColor",
+                                                        strokeWidth: "4"
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                        className: "opacity-75",
+                                                        fill: "currentColor",
+                                                        d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                                    })
+                                                ]
+                                            }),
+                                            "Processing..."
+                                        ]
+                                    }) : /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+                                        children: [
+                                            /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                                                className: "w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110",
+                                                fill: "currentColor",
+                                                viewBox: "0 0 24 24",
+                                                children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                    d: "M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                                                })
+                                            }),
+                                            "Create YouTube Playlist"
+                                        ]
+                                    })
+                                })
+                            }),
+                            playlistLink && playlistLink.length > 0 && /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "mt-8",
+                                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                    className: "glass-card overflow-hidden",
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            className: "bg-gradient-to-r from-red-500 to-red-600 px-6 py-4",
+                                            children: [
+                                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("h3", {
+                                                    className: "text-xl font-bold flex items-center text-white",
+                                                    children: [
+                                                        /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                                                            className: "w-6 h-6 mr-2",
+                                                            fill: "currentColor",
+                                                            viewBox: "0 0 24 24",
+                                                            children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                                d: "M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                                                            })
+                                                        }),
+                                                        "Step 3: Your YouTube Playlist is Ready!"
+                                                    ]
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                    className: "text-red-100 mt-1",
+                                                    children: "Click on any link below to open the video on YouTube"
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                            className: "p-6 divide-y divide-gray-800",
+                                            children: playlistLink.map((song, index)=>/*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                    className: "py-4 flex items-center group hover:bg-white/5 rounded-lg px-4 transition-colors",
+                                                    children: [
+                                                        /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                                            className: "glass-card text-red-400 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300",
+                                                            children: /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                                                                className: "w-5 h-5",
+                                                                fill: "currentColor",
+                                                                viewBox: "0 0 24 24",
+                                                                children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                                    d: "M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                                                                })
+                                                            })
+                                                        }),
+                                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                            className: "flex-grow",
+                                                            children: [
+                                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                                    className: "font-medium text-gray-200",
+                                                                    children: song.title
+                                                                }),
+                                                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("a", {
+                                                                    href: song.youtubeUrl,
+                                                                    target: "_blank",
+                                                                    rel: "noopener noreferrer",
+                                                                    className: "text-purple-400 hover:text-purple-300 text-sm flex items-center mt-1 group",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("svg", {
+                                                                            className: "w-4 h-4 mr-1 transition-transform duration-300 group-hover:scale-110",
+                                                                            fill: "currentColor",
+                                                                            viewBox: "0 0 20 20",
+                                                                            children: [
+                                                                                /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                                                    d: "M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                                                                                }),
+                                                                                /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                                                    d: "M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                                                                                })
+                                                                            ]
+                                                                        }),
+                                                                        "Open on YouTube"
+                                                                    ]
+                                                                })
+                                                            ]
+                                                        })
+                                                    ]
+                                                }, index))
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                            className: "p-6 bg-gradient-to-b from-transparent to-black/20",
+                                            children: /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                                onClick: ()=>{
+                                                    setCurrentStep(2);
+                                                    setPlaylistLink([]);
+                                                },
+                                                className: "glass-card hover:bg-white/10 text-gray-300 font-medium py-2 px-6 rounded-full transition-all duration-300 hover:scale-105",
+                                                children: "Convert More Playlists"
+                                            })
+                                        })
+                                    ]
+                                })
+                            })
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("footer", {
+                className: "glass-card m-4 mt-auto",
+                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    className: "container mx-auto px-4 max-w-6xl py-6",
+                    children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "flex flex-col md:flex-row justify-between items-center",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "mb-4 md:mb-0",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("h3", {
+                                        className: "text-xl font-bold flex items-center gradient-text",
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("svg", {
+                                                className: "w-6 h-6 mr-2",
+                                                viewBox: "0 0 24 24",
+                                                fill: "none",
+                                                children: [
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                        d: "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z",
+                                                        stroke: "currentColor",
+                                                        strokeWidth: "2"
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                        d: "M9 12L15 8V16L9 12Z",
+                                                        fill: "currentColor"
+                                                    })
+                                                ]
+                                            }),
+                                            "PlayListify"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                        className: "text-gray-400 text-sm mt-2",
+                                        children: "Convert Spotify playlists to YouTube with ease"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "text-center md:text-right",
+                                children: [
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("p", {
+                                        className: "text-gray-400",
+                                        children: [
+                                            "\xa9 ",
+                                            new Date().getFullYear(),
+                                            " PlayListify. All rights reserved."
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                        className: "text-gray-500 text-sm mt-1",
+                                        children: "Not affiliated with Spotify or YouTube."
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                })
+            })
+        ]
+    });
+};
+
 
 /***/ }),
 
-/***/ "./components/ProgressBar.js":
-/*!***********************************!*\
-  !*** ./components/ProgressBar.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ ProgressBar)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nprogress */ \"nprogress\");\n/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_1__);\n\n\nfunction ProgressBar() {\n    nprogress__WEBPACK_IMPORTED_MODULE_1___default().start();\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"fixed top-0 left-0 right-0 z-50\",\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            className: \"bg-indigo-600 h-1 w-full\"\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\ProgressBar.js\",\n            lineNumber: 9,\n            columnNumber: 7\n        }, this)\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\ProgressBar.js\",\n        lineNumber: 8,\n        columnNumber: 5\n    }, this);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL1Byb2dyZXNzQmFyLmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQ0E7QUFBa0M7QUFFbkIsU0FBU0MsV0FBVyxHQUFHO0lBQ3BDRCxzREFBZSxFQUFFLENBQUM7SUFFbEIscUJBQ0UsOERBQUNHLEtBQUc7UUFBQ0MsU0FBUyxFQUFDLGlDQUFpQztrQkFDOUMsNEVBQUNELEtBQUc7WUFBQ0MsU0FBUyxFQUFDLDBCQUEwQjs7Ozs7Z0JBQUc7Ozs7O1lBQ3hDLENBQ047Q0FDSCIsInNvdXJjZXMiOlsid2VicGFjazovL3BsYXlsaXN0aWZ5Ly4vY29tcG9uZW50cy9Qcm9ncmVzc0Jhci5qcz82YmRhIl0sInNvdXJjZXNDb250ZW50IjpbIlxuaW1wb3J0IE5Qcm9ncmVzcyBmcm9tICducHJvZ3Jlc3MnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBQcm9ncmVzc0JhcigpIHtcbiAgTlByb2dyZXNzLnN0YXJ0KCk7XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImZpeGVkIHRvcC0wIGxlZnQtMCByaWdodC0wIHotNTBcIj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYmctaW5kaWdvLTYwMCBoLTEgdy1mdWxsXCIgLz5cbiAgICA8L2Rpdj5cbiAgKTtcbn1cbiAgICAiXSwibmFtZXMiOlsiTlByb2dyZXNzIiwiUHJvZ3Jlc3NCYXIiLCJzdGFydCIsImRpdiIsImNsYXNzTmFtZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/ProgressBar.js\n");
-
-/***/ }),
-
-/***/ "./components/SongList.js":
-/*!********************************!*\
-  !*** ./components/SongList.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ SongList)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction SongList({ songs , selectedSongs , toggleSongSelection  }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"mt-6\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                className: \"text-2xl font-semibold mb-4\",\n                children: \"Select Songs \\uD83C\\uDFB6\"\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n                lineNumber: 5,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"ul\", {\n                className: \"grid grid-cols-2 md:grid-cols-3 gap-4\",\n                children: songs.map((song, index)=>/*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"li\", {\n                        className: \"flex flex-col items-center\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                                src: song.thumbnail,\n                                alt: \"thumbnail\",\n                                className: \"w-32 h-32 object-cover rounded-lg mb-2\"\n                            }, void 0, false, {\n                                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n                                lineNumber: 9,\n                                columnNumber: 13\n                            }, this),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                className: \"flex items-center\",\n                                children: [\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"input\", {\n                                        type: \"checkbox\",\n                                        checked: selectedSongs.includes(song),\n                                        onChange: ()=>toggleSongSelection(song),\n                                        className: \"mr-2\"\n                                    }, void 0, false, {\n                                        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n                                        lineNumber: 11,\n                                        columnNumber: 15\n                                    }, this),\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                        className: \"text-center text-sm\",\n                                        children: [\n                                            song.title,\n                                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"br\", {}, void 0, false, {\n                                                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n                                                lineNumber: 18,\n                                                columnNumber: 29\n                                            }, this),\n                                            song.artist\n                                        ]\n                                    }, void 0, true, {\n                                        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n                                        lineNumber: 17,\n                                        columnNumber: 15\n                                    }, this)\n                                ]\n                            }, void 0, true, {\n                                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n                                lineNumber: 10,\n                                columnNumber: 13\n                            }, this)\n                        ]\n                    }, index, true, {\n                        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n                        lineNumber: 8,\n                        columnNumber: 11\n                    }, this))\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n                lineNumber: 6,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\components\\\\SongList.js\",\n        lineNumber: 4,\n        columnNumber: 5\n    }, this);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL1NvbmdMaXN0LmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUNBO0FBQWUsU0FBU0EsUUFBUSxDQUFDLEVBQUVDLEtBQUssR0FBRUMsYUFBYSxHQUFFQyxtQkFBbUIsR0FBRSxFQUFFO0lBQzlFLHFCQUNFLDhEQUFDQyxLQUFHO1FBQUNDLFNBQVMsRUFBQyxNQUFNOzswQkFDbkIsOERBQUNDLElBQUU7Z0JBQUNELFNBQVMsRUFBQyw2QkFBNkI7MEJBQUMsMkJBQWM7Ozs7O29CQUFLOzBCQUMvRCw4REFBQ0UsSUFBRTtnQkFBQ0YsU0FBUyxFQUFDLHVDQUF1QzswQkFDbERKLEtBQUssQ0FBQ08sR0FBRyxDQUFDLENBQUNDLElBQUksRUFBRUMsS0FBSyxpQkFDckIsOERBQUNDLElBQUU7d0JBQWFOLFNBQVMsRUFBQyw0QkFBNEI7OzBDQUNwRCw4REFBQ08sS0FBRztnQ0FBQ0MsR0FBRyxFQUFFSixJQUFJLENBQUNLLFNBQVM7Z0NBQUVDLEdBQUcsRUFBQyxXQUFXO2dDQUFDVixTQUFTLEVBQUMsd0NBQXdDOzs7OztvQ0FBRzswQ0FDL0YsOERBQUNELEtBQUc7Z0NBQUNDLFNBQVMsRUFBQyxtQkFBbUI7O2tEQUNoQyw4REFBQ1csT0FBSzt3Q0FDSkMsSUFBSSxFQUFDLFVBQVU7d0NBQ2ZDLE9BQU8sRUFBRWhCLGFBQWEsQ0FBQ2lCLFFBQVEsQ0FBQ1YsSUFBSSxDQUFDO3dDQUNyQ1csUUFBUSxFQUFFLElBQU1qQixtQkFBbUIsQ0FBQ00sSUFBSSxDQUFDO3dDQUN6Q0osU0FBUyxFQUFDLE1BQU07Ozs7OzRDQUNoQjtrREFDRiw4REFBQ0QsS0FBRzt3Q0FBQ0MsU0FBUyxFQUFDLHFCQUFxQjs7NENBQ2pDSSxJQUFJLENBQUNZLEtBQUs7MERBQUMsOERBQUNDLElBQUU7Ozs7b0RBQUU7NENBQUNiLElBQUksQ0FBQ2MsTUFBTTs7Ozs7OzRDQUN6Qjs7Ozs7O29DQUNGOzt1QkFaQ2IsS0FBSzs7Ozs0QkFhVCxDQUNMOzs7OztvQkFDQzs7Ozs7O1lBQ0QsQ0FDTjtDQUNIIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcGxheWxpc3RpZnkvLi9jb21wb25lbnRzL1NvbmdMaXN0LmpzPzhkNmQiXSwic291cmNlc0NvbnRlbnQiOlsiXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBTb25nTGlzdCh7IHNvbmdzLCBzZWxlY3RlZFNvbmdzLCB0b2dnbGVTb25nU2VsZWN0aW9uIH0pIHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTZcIj5cbiAgICAgIDxoMiBjbGFzc05hbWU9XCJ0ZXh0LTJ4bCBmb250LXNlbWlib2xkIG1iLTRcIj5TZWxlY3QgU29uZ3Mg8J+OtjwvaDI+XG4gICAgICA8dWwgY2xhc3NOYW1lPVwiZ3JpZCBncmlkLWNvbHMtMiBtZDpncmlkLWNvbHMtMyBnYXAtNFwiPlxuICAgICAgICB7c29uZ3MubWFwKChzb25nLCBpbmRleCkgPT4gKFxuICAgICAgICAgIDxsaSBrZXk9e2luZGV4fSBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGl0ZW1zLWNlbnRlclwiPlxuICAgICAgICAgICAgPGltZyBzcmM9e3NvbmcudGh1bWJuYWlsfSBhbHQ9XCJ0aHVtYm5haWxcIiBjbGFzc05hbWU9XCJ3LTMyIGgtMzIgb2JqZWN0LWNvdmVyIHJvdW5kZWQtbGcgbWItMlwiIC8+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyXCI+XG4gICAgICAgICAgICAgIDxpbnB1dFxuICAgICAgICAgICAgICAgIHR5cGU9XCJjaGVja2JveFwiXG4gICAgICAgICAgICAgICAgY2hlY2tlZD17c2VsZWN0ZWRTb25ncy5pbmNsdWRlcyhzb25nKX1cbiAgICAgICAgICAgICAgICBvbkNoYW5nZT17KCkgPT4gdG9nZ2xlU29uZ1NlbGVjdGlvbihzb25nKX1cbiAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJtci0yXCJcbiAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ0ZXh0LWNlbnRlciB0ZXh0LXNtXCI+XG4gICAgICAgICAgICAgICAge3NvbmcudGl0bGV9PGJyLz57c29uZy5hcnRpc3R9XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9saT5cbiAgICAgICAgKSl9XG4gICAgICA8L3VsPlxuICAgIDwvZGl2PlxuICApO1xufVxuICAgICJdLCJuYW1lcyI6WyJTb25nTGlzdCIsInNvbmdzIiwic2VsZWN0ZWRTb25ncyIsInRvZ2dsZVNvbmdTZWxlY3Rpb24iLCJkaXYiLCJjbGFzc05hbWUiLCJoMiIsInVsIiwibWFwIiwic29uZyIsImluZGV4IiwibGkiLCJpbWciLCJzcmMiLCJ0aHVtYm5haWwiLCJhbHQiLCJpbnB1dCIsInR5cGUiLCJjaGVja2VkIiwiaW5jbHVkZXMiLCJvbkNoYW5nZSIsInRpdGxlIiwiYnIiLCJhcnRpc3QiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/SongList.js\n");
-
-/***/ }),
-
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Home)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-auth/react */ \"next-auth/react\");\n/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_auth_react__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ \"./components/Header.js\");\n/* harmony import */ var _components_SongList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/SongList */ \"./components/SongList.js\");\n/* harmony import */ var _components_ProgressBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ProgressBar */ \"./components/ProgressBar.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ \"axios\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);\n\n\n\n\n\n\n\nfunction Home() {\n    const { data: session  } = (0,next_auth_react__WEBPACK_IMPORTED_MODULE_2__.useSession)();\n    const { 0: songs , 1: setSongs  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);\n    const { 0: selectedSongs , 1: setSelectedSongs  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);\n    const { 0: playlistLink , 1: setPlaylistLink  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(\"\");\n    const { 0: loading , 1: setLoading  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);\n    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{\n        if (session) {\n            fetchSongs();\n        }\n    }, [\n        session\n    ]);\n    const fetchSongs = async ()=>{\n        try {\n            const res = await axios__WEBPACK_IMPORTED_MODULE_6___default().post(\"/api/spotify\", {\n                access_token: session.accessToken\n            });\n            setSongs(res.data);\n        } catch (err) {\n            console.error(err);\n        }\n    };\n    const toggleSongSelection = (song)=>{\n        setSelectedSongs((prev)=>{\n            if (prev.includes(song)) {\n                return prev.filter((s)=>s !== song);\n            }\n            return [\n                ...prev,\n                song\n            ];\n        });\n    };\n    const createPlaylist = async ()=>{\n        setLoading(true);\n        try {\n            const res = await axios__WEBPACK_IMPORTED_MODULE_6___default().post(\"/api/youtube\", {\n                songs: selectedSongs\n            });\n            setPlaylistLink(res.data.playlistUrl);\n        } catch (err) {\n            console.error(err);\n        } finally{\n            setLoading(false);\n        }\n    };\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"container mx-auto\",\n        children: [\n            loading && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_ProgressBar__WEBPACK_IMPORTED_MODULE_5__[\"default\"], {}, void 0, false, {\n                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                lineNumber: 54,\n                columnNumber: 19\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_Header__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {}, void 0, false, {\n                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                lineNumber: 55,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"main\", {\n                className: \"my-8\",\n                children: !session ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                    children: \"Please login to Spotify to create your playlist.\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                    lineNumber: 58,\n                    columnNumber: 11\n                }, this) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n                    children: [\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_SongList__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {\n                            songs: songs,\n                            selectedSongs: selectedSongs,\n                            toggleSongSelection: toggleSongSelection\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                            lineNumber: 61,\n                            columnNumber: 13\n                        }, this),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                            onClick: createPlaylist,\n                            className: \"bg-blue-600 text-white p-4 rounded mt-4\",\n                            children: \"Create YouTube Playlist\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                            lineNumber: 62,\n                            columnNumber: 13\n                        }, this),\n                        playlistLink && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                            className: \"mt-6\",\n                            children: [\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h3\", {\n                                    className: \"font-semibold\",\n                                    children: \"Playlist Created! \\uD83C\\uDF89\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                                    lineNumber: 65,\n                                    columnNumber: 17\n                                }, this),\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"ul\", {\n                                    children: playlistLink.map((song, index)=>/*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"li\", {\n                                            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                                                href: song.youtubeUrl,\n                                                target: \"_blank\",\n                                                className: \"text-blue-600\",\n                                                children: song.title\n                                            }, void 0, false, {\n                                                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                                                lineNumber: 69,\n                                                columnNumber: 23\n                                            }, this)\n                                        }, index, false, {\n                                            fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                                            lineNumber: 68,\n                                            columnNumber: 21\n                                        }, this))\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                                    lineNumber: 66,\n                                    columnNumber: 17\n                                }, this)\n                            ]\n                        }, void 0, true, {\n                            fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                            lineNumber: 64,\n                            columnNumber: 15\n                        }, this)\n                    ]\n                }, void 0, true)\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n                lineNumber: 56,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\Users\\\\rohit\\\\Downloads\\\\PlayListify\\\\pages\\\\index.js\",\n        lineNumber: 53,\n        columnNumber: 5\n    }, this);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9pbmRleC5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7QUFDQTtBQUE0QztBQUNDO0FBQ0g7QUFDSTtBQUNNO0FBQzFCO0FBRVgsU0FBU08sSUFBSSxHQUFHO0lBQzdCLE1BQU0sRUFBRUMsSUFBSSxFQUFFQyxPQUFPLEdBQUUsR0FBR1AsMkRBQVUsRUFBRTtJQUN0QyxNQUFNLEtBQUNRLEtBQUssTUFBRUMsUUFBUSxNQUFJWCwrQ0FBUSxDQUFDLEVBQUUsQ0FBQztJQUN0QyxNQUFNLEtBQUNZLGFBQWEsTUFBRUMsZ0JBQWdCLE1BQUliLCtDQUFRLENBQUMsRUFBRSxDQUFDO0lBQ3RELE1BQU0sS0FBQ2MsWUFBWSxNQUFFQyxlQUFlLE1BQUlmLCtDQUFRLENBQUMsRUFBRSxDQUFDO0lBQ3BELE1BQU0sS0FBQ2dCLE9BQU8sTUFBRUMsVUFBVSxNQUFJakIsK0NBQVEsQ0FBQyxLQUFLLENBQUM7SUFFN0NDLGdEQUFTLENBQUMsSUFBTTtRQUNkLElBQUlRLE9BQU8sRUFBRTtZQUNYUyxVQUFVLEVBQUUsQ0FBQztTQUNkO0tBQ0YsRUFBRTtRQUFDVCxPQUFPO0tBQUMsQ0FBQyxDQUFDO0lBRWQsTUFBTVMsVUFBVSxHQUFHLFVBQVk7UUFDN0IsSUFBSTtZQUNGLE1BQU1DLEdBQUcsR0FBRyxNQUFNYixpREFBVSxDQUFDLGNBQWMsRUFBRTtnQkFBRWUsWUFBWSxFQUFFWixPQUFPLENBQUNhLFdBQVc7YUFBRSxDQUFDO1lBQ25GWCxRQUFRLENBQUNRLEdBQUcsQ0FBQ1gsSUFBSSxDQUFDLENBQUM7U0FDcEIsQ0FBQyxPQUFPZSxHQUFHLEVBQUU7WUFDWkMsT0FBTyxDQUFDQyxLQUFLLENBQUNGLEdBQUcsQ0FBQyxDQUFDO1NBQ3BCO0tBQ0Y7SUFFRCxNQUFNRyxtQkFBbUIsR0FBRyxDQUFDQyxJQUFJLEdBQUs7UUFDcENkLGdCQUFnQixDQUFDLENBQUNlLElBQUksR0FBSztZQUN6QixJQUFJQSxJQUFJLENBQUNDLFFBQVEsQ0FBQ0YsSUFBSSxDQUFDLEVBQUU7Z0JBQ3ZCLE9BQU9DLElBQUksQ0FBQ0UsTUFBTSxDQUFDLENBQUNDLENBQUMsR0FBS0EsQ0FBQyxLQUFLSixJQUFJLENBQUMsQ0FBQzthQUN2QztZQUNELE9BQU87bUJBQUlDLElBQUk7Z0JBQUVELElBQUk7YUFBQyxDQUFDO1NBQ3hCLENBQUMsQ0FBQztLQUNKO0lBRUQsTUFBTUssY0FBYyxHQUFHLFVBQVk7UUFDakNmLFVBQVUsQ0FBQyxJQUFJLENBQUMsQ0FBQztRQUNqQixJQUFJO1lBQ0YsTUFBTUUsR0FBRyxHQUFHLE1BQU1iLGlEQUFVLENBQUMsY0FBYyxFQUFFO2dCQUFFSSxLQUFLLEVBQUVFLGFBQWE7YUFBRSxDQUFDO1lBQ3RFRyxlQUFlLENBQUNJLEdBQUcsQ0FBQ1gsSUFBSSxDQUFDeUIsV0FBVyxDQUFDLENBQUM7U0FDdkMsQ0FBQyxPQUFPVixHQUFHLEVBQUU7WUFDWkMsT0FBTyxDQUFDQyxLQUFLLENBQUNGLEdBQUcsQ0FBQyxDQUFDO1NBQ3BCLFFBQVM7WUFDUk4sVUFBVSxDQUFDLEtBQUssQ0FBQyxDQUFDO1NBQ25CO0tBQ0Y7SUFFRCxxQkFDRSw4REFBQ2lCLEtBQUc7UUFBQ0MsU0FBUyxFQUFDLG1CQUFtQjs7WUFDL0JuQixPQUFPLGtCQUFJLDhEQUFDWCwrREFBVzs7OztvQkFBRzswQkFDM0IsOERBQUNGLDBEQUFNOzs7O29CQUFHOzBCQUNWLDhEQUFDaUMsTUFBSTtnQkFBQ0QsU0FBUyxFQUFDLE1BQU07MEJBQ25CLENBQUMxQixPQUFPLGlCQUNQLDhEQUFDNEIsR0FBQzs4QkFBQyxrREFBZ0Q7Ozs7O3dCQUFJLGlCQUV2RDs7c0NBQ0UsOERBQUNqQyw0REFBUTs0QkFBQ00sS0FBSyxFQUFFQSxLQUFLOzRCQUFFRSxhQUFhLEVBQUVBLGFBQWE7NEJBQUVjLG1CQUFtQixFQUFFQSxtQkFBbUI7Ozs7O2dDQUFJO3NDQUNsRyw4REFBQ1ksUUFBTTs0QkFBQ0MsT0FBTyxFQUFFUCxjQUFjOzRCQUFFRyxTQUFTLEVBQUMseUNBQXlDO3NDQUFDLHlCQUF1Qjs7Ozs7Z0NBQVM7d0JBQ3BIckIsWUFBWSxrQkFDWCw4REFBQ29CLEtBQUc7NEJBQUNDLFNBQVMsRUFBQyxNQUFNOzs4Q0FDbkIsOERBQUNLLElBQUU7b0NBQUNMLFNBQVMsRUFBQyxlQUFlOzhDQUFDLGdDQUFtQjs7Ozs7d0NBQUs7OENBQ3RELDhEQUFDTSxJQUFFOzhDQUNBM0IsWUFBWSxDQUFDNEIsR0FBRyxDQUFDLENBQUNmLElBQUksRUFBRWdCLEtBQUssaUJBQzVCLDhEQUFDQyxJQUFFO3NEQUNELDRFQUFDQyxHQUFDO2dEQUFDQyxJQUFJLEVBQUVuQixJQUFJLENBQUNvQixVQUFVO2dEQUFFQyxNQUFNLEVBQUMsUUFBUTtnREFBQ2IsU0FBUyxFQUFDLGVBQWU7MERBQUVSLElBQUksQ0FBQ3NCLEtBQUs7Ozs7O29EQUFLOzJDQUQ3RU4sS0FBSzs7OztnREFFVCxDQUNMOzs7Ozt3Q0FDQzs7Ozs7O2dDQUNEOztnQ0FFUDs7Ozs7b0JBRUE7Ozs7OztZQUNILENBQ047Q0FDSCIsInNvdXJjZXMiOlsid2VicGFjazovL3BsYXlsaXN0aWZ5Ly4vcGFnZXMvaW5kZXguanM/YmVlNyJdLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyB1c2VTZXNzaW9uIH0gZnJvbSAnbmV4dC1hdXRoL3JlYWN0JztcbmltcG9ydCBIZWFkZXIgZnJvbSAnLi4vY29tcG9uZW50cy9IZWFkZXInO1xuaW1wb3J0IFNvbmdMaXN0IGZyb20gJy4uL2NvbXBvbmVudHMvU29uZ0xpc3QnO1xuaW1wb3J0IFByb2dyZXNzQmFyIGZyb20gJy4uL2NvbXBvbmVudHMvUHJvZ3Jlc3NCYXInO1xuaW1wb3J0IGF4aW9zIGZyb20gJ2F4aW9zJztcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gSG9tZSgpIHtcbiAgY29uc3QgeyBkYXRhOiBzZXNzaW9uIH0gPSB1c2VTZXNzaW9uKCk7XG4gIGNvbnN0IFtzb25ncywgc2V0U29uZ3NdID0gdXNlU3RhdGUoW10pO1xuICBjb25zdCBbc2VsZWN0ZWRTb25ncywgc2V0U2VsZWN0ZWRTb25nc10gPSB1c2VTdGF0ZShbXSk7XG4gIGNvbnN0IFtwbGF5bGlzdExpbmssIHNldFBsYXlsaXN0TGlua10gPSB1c2VTdGF0ZSgnJyk7XG4gIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5nXSA9IHVzZVN0YXRlKGZhbHNlKTtcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIGlmIChzZXNzaW9uKSB7XG4gICAgICBmZXRjaFNvbmdzKCk7XG4gICAgfVxuICB9LCBbc2Vzc2lvbl0pO1xuXG4gIGNvbnN0IGZldGNoU29uZ3MgPSBhc3luYyAoKSA9PiB7XG4gICAgdHJ5IHtcbiAgICAgIGNvbnN0IHJlcyA9IGF3YWl0IGF4aW9zLnBvc3QoJy9hcGkvc3BvdGlmeScsIHsgYWNjZXNzX3Rva2VuOiBzZXNzaW9uLmFjY2Vzc1Rva2VuIH0pO1xuICAgICAgc2V0U29uZ3MocmVzLmRhdGEpO1xuICAgIH0gY2F0Y2ggKGVycikge1xuICAgICAgY29uc29sZS5lcnJvcihlcnIpO1xuICAgIH1cbiAgfTtcblxuICBjb25zdCB0b2dnbGVTb25nU2VsZWN0aW9uID0gKHNvbmcpID0+IHtcbiAgICBzZXRTZWxlY3RlZFNvbmdzKChwcmV2KSA9PiB7XG4gICAgICBpZiAocHJldi5pbmNsdWRlcyhzb25nKSkge1xuICAgICAgICByZXR1cm4gcHJldi5maWx0ZXIoKHMpID0+IHMgIT09IHNvbmcpO1xuICAgICAgfVxuICAgICAgcmV0dXJuIFsuLi5wcmV2LCBzb25nXTtcbiAgICB9KTtcbiAgfTtcblxuICBjb25zdCBjcmVhdGVQbGF5bGlzdCA9IGFzeW5jICgpID0+IHtcbiAgICBzZXRMb2FkaW5nKHRydWUpO1xuICAgIHRyeSB7XG4gICAgICBjb25zdCByZXMgPSBhd2FpdCBheGlvcy5wb3N0KCcvYXBpL3lvdXR1YmUnLCB7IHNvbmdzOiBzZWxlY3RlZFNvbmdzIH0pO1xuICAgICAgc2V0UGxheWxpc3RMaW5rKHJlcy5kYXRhLnBsYXlsaXN0VXJsKTtcbiAgICB9IGNhdGNoIChlcnIpIHtcbiAgICAgIGNvbnNvbGUuZXJyb3IoZXJyKTtcbiAgICB9IGZpbmFsbHkge1xuICAgICAgc2V0TG9hZGluZyhmYWxzZSk7XG4gICAgfVxuICB9O1xuXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJjb250YWluZXIgbXgtYXV0b1wiPlxuICAgICAge2xvYWRpbmcgJiYgPFByb2dyZXNzQmFyIC8+fVxuICAgICAgPEhlYWRlciAvPlxuICAgICAgPG1haW4gY2xhc3NOYW1lPVwibXktOFwiPlxuICAgICAgICB7IXNlc3Npb24gPyAoXG4gICAgICAgICAgPHA+UGxlYXNlIGxvZ2luIHRvIFNwb3RpZnkgdG8gY3JlYXRlIHlvdXIgcGxheWxpc3QuPC9wPlxuICAgICAgICApIDogKFxuICAgICAgICAgIDw+XG4gICAgICAgICAgICA8U29uZ0xpc3Qgc29uZ3M9e3NvbmdzfSBzZWxlY3RlZFNvbmdzPXtzZWxlY3RlZFNvbmdzfSB0b2dnbGVTb25nU2VsZWN0aW9uPXt0b2dnbGVTb25nU2VsZWN0aW9ufSAvPlxuICAgICAgICAgICAgPGJ1dHRvbiBvbkNsaWNrPXtjcmVhdGVQbGF5bGlzdH0gY2xhc3NOYW1lPVwiYmctYmx1ZS02MDAgdGV4dC13aGl0ZSBwLTQgcm91bmRlZCBtdC00XCI+Q3JlYXRlIFlvdVR1YmUgUGxheWxpc3Q8L2J1dHRvbj5cbiAgICAgICAgICAgIHtwbGF5bGlzdExpbmsgJiYgKFxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTZcIj5cbiAgICAgICAgICAgICAgICA8aDMgY2xhc3NOYW1lPVwiZm9udC1zZW1pYm9sZFwiPlBsYXlsaXN0IENyZWF0ZWQhIPCfjok8L2gzPlxuICAgICAgICAgICAgICAgIDx1bD5cbiAgICAgICAgICAgICAgICAgIHtwbGF5bGlzdExpbmsubWFwKChzb25nLCBpbmRleCkgPT4gKFxuICAgICAgICAgICAgICAgICAgICA8bGkga2V5PXtpbmRleH0+XG4gICAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj17c29uZy55b3V0dWJlVXJsfSB0YXJnZXQ9XCJfYmxhbmtcIiBjbGFzc05hbWU9XCJ0ZXh0LWJsdWUtNjAwXCI+e3NvbmcudGl0bGV9PC9hPlxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICApfVxuICAgICAgICAgIDwvPlxuICAgICAgICApfVxuICAgICAgPC9tYWluPlxuICAgIDwvZGl2PlxuICApO1xufVxuICAgICJdLCJuYW1lcyI6WyJ1c2VTdGF0ZSIsInVzZUVmZmVjdCIsInVzZVNlc3Npb24iLCJIZWFkZXIiLCJTb25nTGlzdCIsIlByb2dyZXNzQmFyIiwiYXhpb3MiLCJIb21lIiwiZGF0YSIsInNlc3Npb24iLCJzb25ncyIsInNldFNvbmdzIiwic2VsZWN0ZWRTb25ncyIsInNldFNlbGVjdGVkU29uZ3MiLCJwbGF5bGlzdExpbmsiLCJzZXRQbGF5bGlzdExpbmsiLCJsb2FkaW5nIiwic2V0TG9hZGluZyIsImZldGNoU29uZ3MiLCJyZXMiLCJwb3N0IiwiYWNjZXNzX3Rva2VuIiwiYWNjZXNzVG9rZW4iLCJlcnIiLCJjb25zb2xlIiwiZXJyb3IiLCJ0b2dnbGVTb25nU2VsZWN0aW9uIiwic29uZyIsInByZXYiLCJpbmNsdWRlcyIsImZpbHRlciIsInMiLCJjcmVhdGVQbGF5bGlzdCIsInBsYXlsaXN0VXJsIiwiZGl2IiwiY2xhc3NOYW1lIiwibWFpbiIsInAiLCJidXR0b24iLCJvbkNsaWNrIiwiaDMiLCJ1bCIsIm1hcCIsImluZGV4IiwibGkiLCJhIiwiaHJlZiIsInlvdXR1YmVVcmwiLCJ0YXJnZXQiLCJ0aXRsZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./pages/index.js\n");
-
-/***/ }),
-
-/***/ "axios":
-/*!************************!*\
-  !*** external "axios" ***!
-  \************************/
-/***/ ((module) => {
-
-module.exports = require("axios");
-
-/***/ }),
-
-/***/ "next-auth/react":
-/*!**********************************!*\
-  !*** external "next-auth/react" ***!
-  \**********************************/
+/***/ 1649:
 /***/ ((module) => {
 
 module.exports = require("next-auth/react");
 
 /***/ }),
 
-/***/ "nprogress":
-/*!****************************!*\
-  !*** external "nprogress" ***!
-  \****************************/
+/***/ 3280:
 /***/ ((module) => {
 
-module.exports = require("nprogress");
+module.exports = require("next/dist/shared/lib/app-router-context.js");
 
 /***/ }),
 
-/***/ "react":
-/*!************************!*\
-  !*** external "react" ***!
-  \************************/
+/***/ 2796:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/head-manager-context.js");
+
+/***/ }),
+
+/***/ 4014:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/i18n/normalize-locale-path.js");
+
+/***/ }),
+
+/***/ 8524:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/is-plain-object.js");
+
+/***/ }),
+
+/***/ 8020:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/mitt.js");
+
+/***/ }),
+
+/***/ 4406:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
+
+/***/ }),
+
+/***/ 4964:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router-context.js");
+
+/***/ }),
+
+/***/ 1751:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js");
+
+/***/ }),
+
+/***/ 6220:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
+
+/***/ }),
+
+/***/ 299:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 3938:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
+
+/***/ }),
+
+/***/ 9565:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-route.js");
+
+/***/ }),
+
+/***/ 5789:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 1428:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
+
+/***/ }),
+
+/***/ 8854:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
+
+/***/ }),
+
+/***/ 1292:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.js");
+
+/***/ }),
+
+/***/ 4567:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
+
+/***/ }),
+
+/***/ 979:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
+
+/***/ }),
+
+/***/ 3297:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash.js");
+
+/***/ }),
+
+/***/ 6052:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js");
+
+/***/ }),
+
+/***/ 4226:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
+
+/***/ }),
+
+/***/ 5052:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
+
+/***/ }),
+
+/***/ 9232:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/utils.js");
+
+/***/ }),
+
+/***/ 6689:
 /***/ ((module) => {
 
 module.exports = require("react");
 
 /***/ }),
 
-/***/ "react/jsx-dev-runtime":
-/*!****************************************!*\
-  !*** external "react/jsx-dev-runtime" ***!
-  \****************************************/
+/***/ 997:
 /***/ ((module) => {
 
-module.exports = require("react/jsx-dev-runtime");
+module.exports = require("react/jsx-runtime");
 
 /***/ })
 
@@ -110,7 +849,7 @@ module.exports = require("react/jsx-dev-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("./pages/index.js"));
+var __webpack_exports__ = __webpack_require__.X(0, [952,664], () => (__webpack_exec__(6624)));
 module.exports = __webpack_exports__;
 
 })();
