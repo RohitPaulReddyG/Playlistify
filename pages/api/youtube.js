@@ -8,32 +8,19 @@ export default async function handler(req, res) {
     // Get the current session
     const session = await getSession({ req });
     
-    // Check if user is signed in with Google
+    // Check if user is signed in
     if (!session) {
-      return res.status(401).json({ message: 'Please sign in to continue' });
+      return res.status(401).json({ 
+        message: 'Please sign in to continue',
+        error: 'not_authenticated'
+      });
     }
     
-    // Check if we have Google auth token
+    // Check if we have a Google auth token for YouTube access
     if (!session.accessToken || session.provider !== 'google') {
-      return res.status(401).json({ message: 'Please sign in with Google to create YouTube playlists' });
-    }
-
-    // Validate the access token by making a test request
-    try {
-      await axios.get('https://www.googleapis.com/youtube/v3/channels', {
-        params: {
-          part: 'snippet',
-          mine: true
-        },
-        headers: {
-          Authorization: `Bearer ${session.accessToken}`
-        }
-      });
-    } catch (authError) {
-      console.error('YouTube auth error:', authError.response?.data || authError.message);
       return res.status(401).json({ 
-        message: 'Your Google session has expired. Please sign in again.',
-        error: 'token_expired'
+        message: 'Please sign in with Google to create YouTube playlists',
+        error: 'google_auth_required'
       });
     }
 
@@ -58,11 +45,13 @@ export default async function handler(req, res) {
         }
       });
     } catch (playlistError) {
-      console.error('Failed to create playlist:', playlistError.response?.data || playlistError.message);
-      return res.status(500).json({ 
-        message: 'Failed to create YouTube playlist. Please try again.',
-        error: 'playlist_creation_failed'
-      });
+      if (playlistError.response?.status === 401) {
+        return res.status(401).json({
+          message: 'Your Google session has expired. Please sign in again.',
+          error: 'token_expired'
+        });
+      }
+      throw playlistError;
     }
 
     const playlistId = playlistResponse.data.id;
@@ -119,7 +108,7 @@ export default async function handler(req, res) {
       }
     }
 
-    // Return results with any errors
+    // Return results with any errors and the playlist URL
     res.status(200).json({ 
       playlistUrl: youtubePlaylist,
       playlistLink: `https://www.youtube.com/playlist?list=${playlistId}`,
@@ -128,7 +117,7 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error('YouTube API error:', error.response?.data || error.message);
     res.status(500).json({ 
-      message: 'An unexpected error occurred. Please try again.',
+      message: error.response?.data?.message || 'An unexpected error occurred. Please try again.',
       error: error.response?.data?.error || error.message
     });
   }

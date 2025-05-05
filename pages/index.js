@@ -21,9 +21,6 @@ export default function Home() {
 
   useEffect(() => {
     if (session) {
-      if (session.provider === 'spotify') {
-        setNeedsGoogleAuth(true);
-      }
       fetchPlaylists();
       setCurrentStep(2);
     } else {
@@ -89,11 +86,6 @@ export default function Home() {
       return;
     }
     
-    if (needsGoogleAuth) {
-      signIn('google');
-      return;
-    }
-
     setLoading(true);
     setError('');
     try {
@@ -112,10 +104,10 @@ export default function Home() {
       if (err.response?.status === 401) {
         if (err.response?.data?.error === 'token_expired') {
           setError('Your Google session has expired. Please sign in again.');
-          setNeedsGoogleAuth(true);
+          signIn('google', { callbackUrl: window.location.href });
         } else {
           setError('Please sign in with Google to create YouTube playlists.');
-          setNeedsGoogleAuth(true);
+          signIn('google', { callbackUrl: window.location.href });
         }
       } else {
         setError(err.response?.data?.message || 'Failed to create YouTube playlist. Please try again.');
